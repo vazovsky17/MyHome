@@ -11,5 +11,5 @@ class CameraData(
     @SerialName("room") val room: String?,
     @SerialName("id") val id: Int?,
     @SerialName("favorites") val favorites: Boolean?,
-    @SerialName("rec") val icRecording: Boolean?,
+    @SerialName("rec") val isRecording: Boolean?,
 ) : Parcelable
