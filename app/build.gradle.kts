@@ -4,6 +4,7 @@ import org.jetbrains.kotlin.gradle.internal.KaptGenerateStubsTask
 plugins {
     alias(libs.plugins.application)
     alias(libs.plugins.kotlin)
+    alias(libs.plugins.kotlin.parcelize)
     kotlin("kapt")
     alias(libs.plugins.hilt)
     alias(libs.plugins.realm)
@@ -61,6 +62,7 @@ kapt {
 
 dependencies {
     implementation(libs.core.ktx)
+    implementation(libs.kotlin.serialization)
 
     implementation(libs.lifecycle.runtime.ktx)
 
