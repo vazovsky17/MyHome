@@ -86,6 +86,9 @@ dependencies {
     implementation(libs.realm)
     implementation(libs.realm.sync)
 
+    implementation(libs.timber)
+    implementation(libs.glide)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)

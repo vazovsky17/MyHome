@@ -1,4 +1,4 @@
-package app.vazovsky.myhome.ui.theme
+package app.vazovsky.myhome.presentation.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
