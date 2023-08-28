@@ -16,6 +16,7 @@ class DoorsResponse(
     @Parcelize
     class DoorData(
         @SerialName("name") val name: String?,
+        @SerialName("snapshot") val snapshotUrl: String? = null,
         @SerialName("room") val room: String?,
         @SerialName("id") val id: Int?,
         @SerialName("favorites") val favorites: Boolean?,

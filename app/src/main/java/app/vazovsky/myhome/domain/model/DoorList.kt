@@ -6,5 +6,5 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class DoorList(
     val success: Boolean,
-    val doors: List<Door>,
+    val rooms: List<DoorRoom>,
 ) : Parcelable

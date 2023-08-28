@@ -23,7 +23,7 @@ class CamerasResponse(
         @Parcelize
         class CameraData(
             @SerialName("name") val name: String?,
-            @SerialName("snapshot") val snapshotUrl: String?,
+            @SerialName("snapshot") val snapshotUrl: String? = null,
             @SerialName("room") val room: String?,
             @SerialName("id") val id: Int?,
             @SerialName("favorites") val favorites: Boolean?,

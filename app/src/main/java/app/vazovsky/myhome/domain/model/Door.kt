@@ -8,5 +8,6 @@ data class Door(
     val id: Int,
     val name: String,
     val room: String,
-    val favorites: Boolean,
+    val snapshotUrl: String?,
+    val isFavorite: Boolean,
 ) : Parcelable

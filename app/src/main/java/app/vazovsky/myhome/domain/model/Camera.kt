@@ -9,6 +9,6 @@ data class Camera(
     val name: String,
     val snapshotUrl: String?,
     val room: String,
-    val favorites: Boolean,
+    val isFavorite: Boolean,
     val isRecording: Boolean,
 ) : Parcelable

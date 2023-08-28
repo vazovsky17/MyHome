@@ -5,4 +5,6 @@
     <string name="topbar_title">Мой дом</string>
     <string name="error_something_wrong">Что-то пошло не так</string>
     <string name="error_update">Обновить</string>
+    <string name="error_empty">К сожалению ничего нет</string>
+    <string name="default_door_comment">В сети</string>
 </resources>
