@@ -1,6 +1,5 @@
 package app.vazovsky.myhome.domain.mapper
 
-import app.vazovsky.myhome.data.network.model.DoorData
 import app.vazovsky.myhome.data.network.model.response.DoorsResponse
 import app.vazovsky.myhome.domain.extensions.orDefault
 import app.vazovsky.myhome.domain.model.Door
@@ -15,7 +14,7 @@ class DoorMapper @Inject constructor() {
         )
     }
 
-    private fun fromApiToModel(apiModel: DoorData?): Door {
+    private fun fromApiToModel(apiModel: DoorsResponse.DoorData?): Door {
         return Door(
             id = apiModel?.id.orDefault(),
             name = apiModel?.name.orDefault(),

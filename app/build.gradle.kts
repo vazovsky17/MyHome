@@ -5,6 +5,7 @@ plugins {
     alias(libs.plugins.application)
     alias(libs.plugins.kotlin)
     alias(libs.plugins.kotlin.parcelize)
+    alias(libs.plugins.kotlin.serialization)
     kotlin("kapt")
     alias(libs.plugins.hilt)
     alias(libs.plugins.realm)
@@ -69,6 +70,7 @@ dependencies {
     implementation(libs.activity.compose)
     implementation(platform(libs.compose.bom))
     androidTestImplementation(platform(libs.compose.bom))
+    implementation(libs.compose.runtime)
 
     implementation(libs.ui)
     implementation(libs.ui.graphics)
@@ -79,6 +81,7 @@ dependencies {
 
     implementation(libs.hilt)
     kapt(libs.hilt.compiler)
+    implementation(libs.hilt.nav)
 
     implementation(libs.ktor.okhttp)
     implementation(libs.ktor.contentnegotiation)

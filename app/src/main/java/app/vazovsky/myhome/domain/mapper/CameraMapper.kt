@@ -1,6 +1,5 @@
 package app.vazovsky.myhome.domain.mapper
 
-import app.vazovsky.myhome.data.network.model.CameraData
 import app.vazovsky.myhome.data.network.model.response.CamerasResponse
 import app.vazovsky.myhome.domain.extensions.orDefault
 import app.vazovsky.myhome.domain.model.Camera
@@ -14,7 +13,7 @@ class CameraMapper @Inject constructor() {
             cameras = apiModel.data?.cameras.orEmpty().map { fromApiToModel(it) })
     }
 
-    private fun fromApiToModel(apiModel: CameraData?): Camera {
+    private fun fromApiToModel(apiModel: CamerasResponse.CamerasListData.CameraData?): Camera {
         return Camera(
             id = apiModel?.id.orDefault(),
             name = apiModel?.name.orDefault(),
