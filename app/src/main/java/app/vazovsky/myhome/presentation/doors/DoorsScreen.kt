@@ -15,9 +15,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
+import app.vazovsky.myhome.domain.model.DoorList
 import app.vazovsky.myhome.presentation.common.ErrorUI
 import app.vazovsky.myhome.presentation.common.LoadingUI
-import timber.log.Timber
 
 @Composable
 fun DoorsScreen(
@@ -29,23 +29,20 @@ fun DoorsScreen(
         viewModel.getDoors()
     }
     Box(modifier = Modifier.fillMaxSize()) {
-        doorsState?.doOnSuccess {
-            DoorsDataUI()
-            Timber.d("LOL DOORS: $it")
+        doorsState?.doOnSuccess { data ->
+            DoorsDataUI(data)
         }
         doorsState?.doOnFailure {
-            ErrorUI(it)
-            Timber.d("LOL FUUUU: $it")
+            ErrorUI(it) { viewModel.getDoors() }
         }
         doorsState?.doOnLoading {
             LoadingUI()
-            Timber.d("LOL LOADING")
         }
     }
 }
 
 @Composable
-fun DoorsDataUI() {
+fun DoorsDataUI(data: DoorList) {
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,

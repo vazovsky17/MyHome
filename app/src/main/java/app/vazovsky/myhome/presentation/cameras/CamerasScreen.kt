@@ -15,9 +15,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
+import app.vazovsky.myhome.domain.model.CameraList
 import app.vazovsky.myhome.presentation.common.ErrorUI
 import app.vazovsky.myhome.presentation.common.LoadingUI
-import timber.log.Timber
 
 @Composable
 fun CamerasScreen(
@@ -29,23 +29,20 @@ fun CamerasScreen(
         viewModel.getCameras()
     }
     Box(modifier = Modifier.fillMaxSize()) {
-        camerasState?.doOnSuccess {
-            CamerasDataUI()
-            Timber.d("LOL CAMERAS: $it")
+        camerasState?.doOnSuccess { data ->
+            CamerasDataUI(data)
         }
         camerasState?.doOnFailure {
-            ErrorUI(it)
-            Timber.d("LOL FUUUU: $it")
+            ErrorUI(it) { viewModel.getCameras() }
         }
         camerasState?.doOnLoading {
             LoadingUI()
-            Timber.d("LOL LOADING")
         }
     }
 }
 
 @Composable
-fun CamerasDataUI() {
+fun CamerasDataUI(data: CameraList) {
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,

@@ -3,4 +3,6 @@
     <string name="tab_cameras_label">Камеры</string>
     <string name="tab_doors_label">Двери</string>
     <string name="topbar_title">Мой дом</string>
+    <string name="error_something_wrong">Что-то пошло не так</string>
+    <string name="error_update">Обновить</string>
 </resources>
